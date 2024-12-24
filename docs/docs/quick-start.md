@@ -185,13 +185,13 @@ export class Book {
 Or if you want to use UUID primary key:
 
 ```ts title="./entities/Book.ts"
-import { v4 } from 'uuid';
+import { randomUUID } from 'node:crypto';
 
 @Entity()
 export class Book {
 
   @PrimaryKey({ type: 'uuid' })
-  uuid = v4();
+  uuid = randomUUID();
 
   // ...
 
